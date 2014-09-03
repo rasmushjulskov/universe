@@ -1,0 +1,18 @@
+// Box Shadows
+@mixin box-shadow($shadow...) {
+	@if $box-shadows == true {
+	  -webkit-box-shadow: $shadow; 
+	  -moz-box-shadow: $shadow; 
+	  box-shadow: $shadow;
+	}
+}
+.box-shadow {
+  @include box-shadow($x-axis $y-axis $blur $size rgba($color, $alpha));
+}
+
+@mixin box-shadow-default {
+	@if $box-shadows == true {
+	  @include box-shadow($x-axis $y-axis $blur $size rgba($color, $alpha));
+	}
+}
+// END:BOX-SHADOW

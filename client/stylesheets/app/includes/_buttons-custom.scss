@@ -1,0 +1,57 @@
+// Bootstrap 3 Custom Buttons
+a.btn,
+button.btn {
+	&.btn-default.btn-outline {
+		background: none;
+		border: 2px solid darken($gray-lighter, 7%);
+		&:hover {
+			background: white;
+			border: 2px solid $gray-light;
+		}
+	}
+	&.btn-primary.btn-outline {
+		background: none;
+		border: 2px solid lighten($brand-primary, 21%);
+		color: $brand-primary;
+		&:hover {
+			background: white;
+			border: 2px solid $brand-primary;
+		}
+	}
+	&.btn-success.btn-outline {
+		background: none;
+		border: 2px solid lighten($brand-success, 21%);
+		color: $brand-success;
+		&:hover {
+			background: white;
+			border: 2px solid $brand-success;
+		}
+	}
+	&.btn-info.btn-outline {
+		background: none;
+		border: 2px solid lighten($brand-info, 21%);
+		color: $brand-info;
+		&:hover {
+			background: white;
+			border: 2px solid $brand-info;
+		}
+	}
+	&.btn-warning.btn-outline {
+		background: none;
+		border: 2px solid lighten($brand-warning, 21%);
+		color: $brand-warning;
+		&:hover {
+			background: white;
+			border: 2px solid $brand-warning;
+		}
+	}
+	&.btn-danger.btn-outline {
+		background: none;
+		border: 2px solid lighten($brand-danger, 21%);
+		color: $brand-danger;
+		&:hover {
+			background: white;
+			border: 2px solid $brand-danger;
+		}
+	}
+}
