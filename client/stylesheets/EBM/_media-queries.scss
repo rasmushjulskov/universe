@@ -1,9 +1,0 @@
-// EBM MEDIA QUERIES B3 - FOUNDATION:
-$screen: "only screen" !default;
-
-$landscape: "#{$screen} and (orientation: landscape)" !default;
-$portrait: "#{$screen} and (orientation: portrait)" !default;
-
-$xs-only: "#{$screen} and (max-width: #{$screen-phone})" !default;
-
-$sm-only: "#{$screen} and (max-width: #{$screen-tablet})" !default;
