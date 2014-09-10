@@ -1,6 +1,11 @@
 <template name="layout">
-  <h1>app</h1>
+  <h1>{{pageTitle}}</h1>
+  {{> loginButtons}}
   <div>
     {{> yield}}
   </div>
+  <br />
+  {{#if currentUser}}
+    <a href="{{pathFor 'postSubmit'}}"> new post </a>
+  {{/if}}
 </template>
