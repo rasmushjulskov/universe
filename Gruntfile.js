@@ -18,8 +18,11 @@ module.exports = function(grunt) {
     compass: {
       default: {
         options: {
-          bundleExec: true,
+          bundleExec: true
         }
+      },
+      options: {
+        require: 'susy'
       }
     }
   });
