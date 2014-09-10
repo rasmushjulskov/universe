@@ -3,10 +3,16 @@ require 'compass/import-once/activate'
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "stylesheets"
-sass_dir = "sass"
+css_dir = "universe/client/stylesheets"
+sass_dir = "css"
 images_dir = "images"
 javascripts_dir = "javascripts"
+
+environment = :production
+output_style = :compressed
+line_comments = false
+preferred_syntax = :scss
+sass_options = {:unix_newlines => true}
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

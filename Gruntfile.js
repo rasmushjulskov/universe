@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     // Watch files for changes and run tasks ---------------------- //
     watch: {
       css: {
-        files: ['universe/client/stylesheets/**/*.scss'],
+        files: ['css/*.scss'],
         tasks: ['compass']
       }
     },
@@ -27,7 +27,9 @@ module.exports = function(grunt) {
 
   //grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['compass']);
-  //grunt.registerTask('server', ['connect', 'watch']);
+  grunt.registerTask('server', ['watch']);
 };
