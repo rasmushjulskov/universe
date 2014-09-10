@@ -1,0 +1,14 @@
+// Screen
+// ======
+
+@import "grids";
+@import "variables";
+
+.wrapper {
+  background-color: rgba(0,0,0,.2);
+  @include container; 
+}
+
+.div2 {
+  @include span(6); 
+}
