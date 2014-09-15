@@ -56,4 +56,6 @@ if (Posts.find().count() === 0) {
     submitted: now - 12 * 3600 * 1000,
     commentsCount: 0
   });
+
+  Accounts.createUser({ username: "rhl", email: "rhjulskov@gmail.com", password: "123456"});
 }
