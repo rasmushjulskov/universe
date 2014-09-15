@@ -10,8 +10,8 @@ Router.map(function() {
   this.route('postPage', {
     path: '/posts/:_id',
     waitOn: function() {
-      reutnr Meteor.subscribe('comments', this.params._id);
-    }
+      return Meteor.subscribe('comments', this.params._id);
+    },
     data: function() { return Posts.findOne(this.params._id);   }
   });
   this.route('postSubmit', {
