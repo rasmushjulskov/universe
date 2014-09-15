@@ -1,3 +1,8 @@
 <template name="postPage">
   {{> postItem}}
+  <ul>
+    {{#each comments}}
+      {{> comment}}
+    {{/each}}
+  </ul>
 </template>
