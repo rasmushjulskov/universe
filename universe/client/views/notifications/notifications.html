@@ -1,0 +1,23 @@
+<template name="notifications">
+  Notifications
+  {{#if notificationCount}}
+    <span class="badge badge-inverse">{{notificationCount}}</span>
+  {{/if}}
+  <ul>
+    {{#if notificationCount}}
+      {{#each notifications}}
+        {{> notification}}
+      {{/each}}
+    {{else}}
+      <li><span>No Notifications</span></li>
+    {{/if}}
+  </ul>
+</template>
+
+<template name="notification">
+  <li>
+    <a href="{{notificationPostPath}}">
+      <strong>{{commenterName}}</strong> commented on your post
+    </a>
+  </li>
+</template>

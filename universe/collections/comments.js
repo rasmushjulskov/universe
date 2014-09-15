@@ -4,7 +4,7 @@ Meteor.methods({
     var user = Meteor.user();
     var post = Posts.findOne(commentAttributes.postId);
     // ensure the user is logged in
-    if (!user) {
+    if (!user){
       throw new Meteor.Error(401, "You need to login to make comments");
     }
     if (!commentAttributes.body){
@@ -22,12 +22,10 @@ Meteor.methods({
     // update the post with the number of comments
     Posts.update(comment.postId, {$inc: {commentsCount: 1}});
     
-    //create the comment, save the id
-    comment._id = Comments.insert(comment); 
-
+    // create the comment, save the id
+    comment._id = Comments.insert(comment);
     // now create a notification, informing the user that there's been a comment
     createCommentNotification(comment);
-
     return comment._id;
   }
 });
