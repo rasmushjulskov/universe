@@ -2,13 +2,16 @@ Router.configure({
   layoutTemplate: 'layout',
   loadingTemplate: 'loading',
   // wating on subscribtion
-  waitOn: function() { return [Meteor.subscribe('posts'), Meteor.subscribe('comments')];}
+  waitOn: function() { return [Meteor.subscribe('posts')];}
 });
 
 Router.map(function() {
   this.route('postsList', {path: '/'});
   this.route('postPage', {
     path: '/posts/:_id',
+    waitOn: function() {
+      reutnr Meteor.subscribe('comments', this.params._id);
+    }
     data: function() { return Posts.findOne(this.params._id);   }
   });
   this.route('postSubmit', {

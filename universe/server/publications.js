@@ -4,5 +4,5 @@ Meteor.publish('posts', function(){
 });
 
 Meteor.publish('comments', function() {
-  return Comments.find();
+  return Comments.find({postId: postId});
 });
