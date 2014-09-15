@@ -7,7 +7,9 @@ Template.postItem.helpers({
     a.href = this.url;
     return a.hostname;
   },
+  /* How to count serverside 
   commentsCount: function(){
     return Comments.find({postId: this._id}).count();
   },
+  */
 });
