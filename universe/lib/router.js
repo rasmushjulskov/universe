@@ -5,19 +5,27 @@ Router.configure({
   waitOn: function() { return [Meteor.subscribe('notifications')];}
 });
 
+PostsListController = RouteController.extend({
+  template: 'postsList',
+  increment: 5, 
+  limit: function() { 
+    return parseInt(this.params.postsLimit) || this.increment; 
+  },
+  findOptions: function() {
+    return {sort: {submitted: -1}, limit: this.limit()};
+  },
+  waitOn: function() {
+    return Meteor.subscribe('posts', this.findOptions());
+  },
+  data: function() {
+    return {posts: Posts.find({}, this.findOptions())};
+  }
+});
+
 Router.map(function() {
   this.route('postsList', {
     path: '/:postsLimit?',
-    waitOn: function(){
-      var postsLimit = parseInt(this.params.postsLimit) || 5;
-      return Meteor.subscribe('posts', {sort: {submitted: -1}, limit: postsLimit});
-    },
-    data: function() {
-      var postsLimit = parseInt(this.params.postsLimit) || 5;
-      return {
-        posts: Posts.find({}, {sort: {submitted: -1}, limit: postsLimit})
-      }
-    }
+    controller: PostsListController
   });
   this.route('postPage', {
     path: '/posts/:_id',
