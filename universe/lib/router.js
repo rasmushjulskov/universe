@@ -2,7 +2,9 @@ Router.configure({
   layoutTemplate: 'layout',
   loadingTemplate: 'loading',
   // wating on subscribtion
-  waitOn: function() { return [Meteor.subscribe('notifications')];}
+  waitOn: function() {
+    return [Meteor.subscribe('notifications')]
+  }
 });
 
 PostsListController = RouteController.extend({
@@ -14,17 +16,18 @@ PostsListController = RouteController.extend({
   findOptions: function() {
     return {sort: {submitted: -1}, limit: this.limit()};
   },
-  waitOn: function() {
-    return Meteor.subscribe('posts', this.findOptions());
+  onBeforeAction: function() {
+    this.postsSub = Meteor.subscribe('posts', this.findOptions());
   },
   posts: function() {
     return Posts.find({}, this.findOptions());
   },
   data: function() {
-    var hasMore = this.posts().count() == this.limit();
+    var hasMore = this.posts().count() === this.limit();
     var nextPath = this.route.path({postsLimit: this.limit() + this.increment});
     return {
       posts: this.posts(),
+      ready: this.postsSub.ready,
       nextPath: hasMore ? nextPath : null
     };
   }
@@ -43,7 +46,8 @@ Router.map(function() {
     data: function() { return Posts.findOne(this.params._id);   }
   });
   this.route('postSubmit', {
-    path: '/submit'
+    path: '/submit',
+    disableProgress: true
   });
   this.route('postEdit', {
     path: '/posts/:_id/edit',

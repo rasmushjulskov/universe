@@ -7,3 +7,5 @@ standard-app-packages
 iron:router
 accounts-ui
 accounts-password
+mrt:iron-router-progress
+
