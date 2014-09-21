@@ -1,5 +1,13 @@
 <template name="sideNavigation">
   <div class="side-navigation">
-    Universe
+    <a href="{{pathFor 'home'}}">Universe</a>
+    <ul>
+      <li>
+        <a href="{{pathFor 'newPosts'}}">New</a>
+      </li>
+      <li>
+        <a href="{{pathFor 'bestPosts'}}">best</a>
+      </li>
+    </ul>
   </div>
 </template>
