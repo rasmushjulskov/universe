@@ -1,6 +1,7 @@
 <template name="postsList">
+  {{> postSubmit}}
   <div class="posts">
-    {{#each posts}}
+    {{#each postsWithRank}}
       {{> postItem}}
     {{/each}}
     {{#if nextPath}}

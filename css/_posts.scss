@@ -1,0 +1,15 @@
+.posts {
+  
+  @include container
+}
+.post {
+  @include span(100%);
+  padding: 16px;
+  position:relative;
+  transition:all 300ms 0ms ease-in;
+  .post-content {
+    padding: 16px;
+    background-color: white;
+  }
+}
+ 

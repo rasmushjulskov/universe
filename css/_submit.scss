@@ -1,0 +1,23 @@
+
+
+.post-submit {
+  width: 100%;
+  padding: 16px;
+}
+
+input, textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 4px;
+  resize: none;
+}
+
+textarea[name=message] {
+  border-top: 1px $gray-light solid;  
+}
+
+input[name="title"] {
+  font-size: 16px;
+  
+}

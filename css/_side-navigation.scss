@@ -1,0 +1,12 @@
+
+
+.side-navigation {
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: $gray-dark;
+  width: $sidebar;
+  min-height: 100%;
+  float: left;
+  color: white;
+}

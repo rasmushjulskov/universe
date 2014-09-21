@@ -2,11 +2,8 @@
   <div class="top-navigation">
     <p>top Navigation</p>
     {{> loginButtons}}
-  </div>
-  <div>
-    {{#if currentUser}}
+     {{#if currentUser}}
       {{> notifications}}
     {{/if}}
-    <br />
   </div>
 </template>

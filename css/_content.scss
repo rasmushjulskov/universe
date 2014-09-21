@@ -1,0 +1,24 @@
+body, 
+html {
+  width: 100%;
+  height: 100%;
+}
+
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $gray-light;
+}
+.main-content-wrapper {
+  margin-left: $sidebar;
+  // should find a smarter method
+  width: calc( 100% - 200px )
+
+
+}

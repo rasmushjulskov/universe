@@ -1,0 +1,30 @@
+// Breakpoints ---------------------------------------------------- //
+$mq-breakpoints: (
+  (phone        240px)
+  (phablet      550px)
+  (tablet       750px)
+  (desktop      1006px)
+  (widescreen  1200px)
+);
+
+$mq-static-breakpoint: "desktop" ;
+
+// Grid ----------------------------------------------------------- //
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: outside,
+);
+
+
+// Colors --------------------------------------------------------- //
+$gray-dark: #1E2026;
+$gray-light: #e3e3e3;
+$black: blue;
+
+
+// Variables ------------------------------------------------------ //
+$sidebar: 200px;
+
