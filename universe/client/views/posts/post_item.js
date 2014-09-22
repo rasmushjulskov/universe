@@ -13,7 +13,7 @@ Template.postItem.helpers({
   upvotedClass: function() {
     var userId = Meteor.userId();
     if (userId && !_.include(this.upvoters, userId)) {
-      return 'btn-primary upvotable';
+      return 'upvotable';
     } else {
       return 'disabled';
     }
@@ -33,7 +33,7 @@ Template.postItem.helpers({
       Positions.upsert({postId: post._id}, {$set: {position: newPosition}})
     });
     return attributes;
-  },
+  }
   /* How to count serverside 
   commentsCount: function(){
     return Comments.find({postId: this._id}).count();
@@ -42,7 +42,7 @@ Template.postItem.helpers({
 });
 
 Template.postItem.events({
-  'click .upvote': function(e) {
+  'click .upvotable': function(e) {
     e.preventDefault();
     Meteor.call('upvote', this._id);
   }

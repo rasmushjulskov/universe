@@ -27,7 +27,6 @@ PostsListController = RouteController.extend({
     var nextPath = this.route.path({postsLimit: this.limit() + this.increment});
     return {
       posts: this.posts(),
-      ready: this.postsSub.ready,
       nextPath: hasMore ? this.nextPath : null
     };
   }

@@ -1,13 +1,22 @@
 <template name="sideNavigation">
   <div class="side-navigation">
     <a href="{{pathFor 'home'}}">Universe</a>
+    
     <ul>
-      <li>
-        <a href="{{pathFor 'newPosts'}}">New</a>
-      </li>
-      <li>
-        <a href="{{pathFor 'bestPosts'}}">best</a>
-      </li>
+      <li class="{{activeRouteClass 'home' 'newPosts'}}">
+            <a href="{{pathFor 'newPosts'}}">New</a>
+          </li>
+          <li class="{{activeRouteClass 'bestPosts'}}">
+            <a href="{{pathFor 'bestPosts'}}">Best</a>
+          </li>
+      {{#if currentUser}}
+            <li class="{{activeRouteClass 'postSubmit'}}">
+              <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
+            </li>
+      {{/if}}
     </ul>
+    
   </div>
 </template>
+
+

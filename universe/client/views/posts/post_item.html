@@ -1,7 +1,7 @@
 <template name="postItem">
-  <div class="post {{attributes}}">
+  <div class="post "><!-- {{attributes}}-->
     <div class="post-content">
-     <a href="#" class="upvote upvotable {{upvotedClass}}">⬆</a>
+     <a href="#" class="upvote {{upvotedClass}}">⬆</a>
       <h3><a href="{{pathFor 'postPage'}}">{{title}}</a><span>{{domain}}</span></h3>
       <p>
         {{pluralize votes "Vote"}},
