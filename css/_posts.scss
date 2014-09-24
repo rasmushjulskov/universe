@@ -3,6 +3,8 @@
   @include container
 }
 .post {
+  height: 80px;
+  margin-top: 20px;
   @include span(100%);
   padding: 16px;
   position:relative;

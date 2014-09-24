@@ -1,4 +1,4 @@
-var POST_HEIGHT =  80;
+var POST_HEIGHT = 80;
 var Positions = new Meteor.Collection(null);
 
 Template.postItem.helpers({
@@ -13,7 +13,7 @@ Template.postItem.helpers({
   upvotedClass: function() {
     var userId = Meteor.userId();
     if (userId && !_.include(this.upvoters, userId)) {
-      return 'upvotable';
+      return 'btn-primary upvotable';
     } else {
       return 'disabled';
     }
@@ -22,23 +22,22 @@ Template.postItem.helpers({
     var post = _.extend({}, Positions.findOne({postId: this._id}), this);
     var newPosition = post._rank * POST_HEIGHT;
     var attributes = {};
-    if (! _.isUndefined(post.position)) {
-      var offset = post.position - newPosition;
-      attributes.style = "top: "+offset+"px";
-      if(offset == 0) {
+    
+    if (_.isUndefined(post.position)) {
+      attributes.class = 'post invisible';
+    } else {
+      var delta = post.position - newPosition;      
+      attributes.style = "top: " + delta + "px";
+      if (delta === 0)
         attributes.class = "post animate"
-      }
     }
-    Meteor.setTimeout(function(){
+    
+    Meteor.setTimeout(function() {
       Positions.upsert({postId: post._id}, {$set: {position: newPosition}})
     });
+    
     return attributes;
   }
-  /* How to count serverside 
-  commentsCount: function(){
-    return Comments.find({postId: this._id}).count();
-  },
-  */
 });
 
 Template.postItem.events({
