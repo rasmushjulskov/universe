@@ -1,8 +1,16 @@
 <template name="sideNavigation">
-  <div class="side-navigation">
-    <a href="{{pathFor 'home'}}">Universe</a>
+  <div class="side-nav">
+
+    <a href="{{pathFor 'home'}}">
+      <span class="side-nav--logo">
+        UNIVERSE
+      </span>
+    </a>
     
-    <ul>
+    <div class="btn">
+      Creat
+    </div>
+    <ul class="menu">
       <li class="{{activeRouteClass 'home' 'newPosts'}}">
             <a href="{{pathFor 'newPosts'}}">New</a>
           </li>
@@ -16,6 +24,12 @@
       {{/if}}
     </ul>
     
+    <ul class="colorpallete">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
 </template>
 

@@ -1,14 +1,27 @@
 <template name="postItem">
   <div class="post" {{attributes}}>
     <div class="post-content">
-     <a href="#" class="upvote {{upvotedClass}}">⬆</a>
+      <div class="cat-icon">
+        
+      </div>
+      <a href="#" class="upvote {{upvotedClass}}">⬆</a>
       <h3><a href="{{pathFor 'postPage'}}">{{title}}</a><span>{{domain}}</span></h3>
       <p>
-        {{pluralize votes "Vote"}},
-        submitted by {{author}}
-        <a href="{{pathFor 'postPage'}}">{{pluralize commentsCount "comment"}}</a>
-        {{#if ownPost}}<a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
+        
+        <a href="{{pathFor 'postPage'}}"></a>
+        
+        <a class="post--author" href="#">
+          By: {{author}}
+        </a>
+        <!--{{#if ownPost}}-->
+          <a class="post--edit" href="{{pathFor 'postEdit'}}">Edit</a>
+        <!--{{/if}}-->
       </p>
+      <ul class="post-stat">
+        <li>{{pluralize votes "Vote"}}</li>
+        <li>{{pluralize commentsCount "comment"}}</li>
+        <li>3</li>  
+      </ul>
     </div>
   </div>
 </template>

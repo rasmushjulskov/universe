@@ -13,42 +13,25 @@ if (Posts.find().count() === 0) {
   var sacha = Meteor.users.findOne(sachaId);
 
   var telescopeId = Posts.insert({
-    title: 'Introducing Telescope',
+    title: 'Universe',
     userId: sacha._id,
     author: sacha.profile.name,
     url: 'http://sachagreif.com/introducing-telescope/',
     submitted: now - 7 * 3600 * 1000,
     commentsCount: 2,
-    upvoters: [], votes: 0
+    upvoters: [], votes: 100
   });
 
-  Comments.insert({
-    postId: telescopeId,
-    userId: tom._id,
-    author: tom.profile.name,
-    submitted: now - 5 * 3600 * 1000,
-    body: 'Interesting project Sacha, can I get involved?',
-    commentsCount: 0
-  });
-
-  Comments.insert({
-    postId: telescopeId,
-    userId: sacha._id,
-    author: sacha.profile.name,
-    submitted: now - 3 * 3600 * 1000,
-    body: 'You sure can Tom!',
-    commentsCount: 0
-  });
-
-  Posts.insert({
-    title: 'Meteor',
-    userId: tom._id,
-    author: tom.profile.name,
-    url: 'http://meteor.com',
-    submitted: now - 10 * 3600 * 1000,
-    commentsCount: 0,
-    upvoters: [], votes: 0
-  });
+  for (var i = 0; i < 10; i++) {
+    Comments.insert({
+      postId: telescopeId,
+      userId: tom._id,
+      author: tom.profile.name,
+      submitted: now - i * 3600 * 1000,
+      body: 'Interesting project Sacha, can I get involved?',
+      commentsCount: 0
+    });
+  }
 
   for (var i = 0; i < 32; i++) {
     Posts.insert({

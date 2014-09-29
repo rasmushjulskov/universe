@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    #btn
+\*------------------------------------*/
+
+.btn {
+  position: relative;
+  padding: 8px 32px; 
+  margin: 0 auto;
+  display: table;
+  border-radius: $border-radius;
+  background-color: $gray-light;
+  color: $gray-dark;
+  text-align: center;
+  
+}

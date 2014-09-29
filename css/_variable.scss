@@ -14,7 +14,7 @@ $susy: (
   columns: 12,
   gutters: 1/4,
   math: fluid,
-  output: float,
+  output: float,  
   gutter-position: outside,
 );
 
@@ -22,9 +22,13 @@ $susy: (
 // Colors --------------------------------------------------------- //
 $gray-dark: #1E2026;
 $gray-light: #e3e3e3;
-$black: blue;
+$black: black;
+$white: white;
+$yellow: #C5AB56;
+$brown: #343331;
 
 
 // Variables ------------------------------------------------------ //
 $sidebar: 200px;
-
+$border-radius: 4px;
+$icon: 44px;
