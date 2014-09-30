@@ -1,13 +1,20 @@
 // Breakpoints ---------------------------------------------------- //
+
+// To enable support for browsers that do not support @media queries,
+// (IE <= 8, Firefox <= 3, Opera <= 9) set $mq-responsive to false
+// Create a separate stylesheet served exclusively to these browsers,
+// meaning @media queries will be rasterized, relying on the cascade itself
+$mq-responsive: true;
 $mq-breakpoints: (
-  (phone        240px)
-  (phablet      550px)
-  (tablet       750px)
-  (desktop      1006px)
-  (widescreen  1200px)
+  phone: 240px,
+  phablet: 550px,
+  tablet: 750px,
+  desktop: 1006px,
+  widescreen: 1200px
 );
 
 $mq-static-breakpoint: "desktop" ;
+$mq-show-breakpoints: (phone, phablet, tablet, desktop, widescreen);
 
 // Grid ----------------------------------------------------------- //
 $susy: (
@@ -32,3 +39,4 @@ $brown: #343331;
 $sidebar: 200px;
 $border-radius: 4px;
 $icon: 44px;
+
