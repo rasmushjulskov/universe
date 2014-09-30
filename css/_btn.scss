@@ -5,11 +5,13 @@
 .btn {
   position: relative;
   padding: 8px 32px; 
-  margin: 0 auto;
-  display: table;
+  margin: 10px 0 0 0;
+  display: inline-block;
   border-radius: $border-radius;
-  background-color: $gray-light;
+  border: 2px solid $gray-light;
   color: $gray-dark;
-  text-align: center;
+  &:hover {
+    border: 2px solid $black;
+  }
   
 }

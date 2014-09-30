@@ -7,13 +7,22 @@
 }
 .post {
   margin-top: 20px;
+  @include mq($from: tablet){
+    @include span(50%);  
+  }
+  @include mq($from: desktop){
+    @include span(33.33%);  
+  }
+  @include mq($from: widescreen){
+    @include span(25%);  
+  }
   @include span(100%);
   padding: 16px;
   position:relative;
   transition:all 300ms 0ms ease-in;
   .post-content {
     position: relative;
-    padding: 16px 16px $icon+16 16px;
+    padding: 16px;
     background-color: $white;
     border-bottom: $border-radius solid $gray-dark;
     border-radius: $border-radius;
@@ -26,12 +35,18 @@
     position: absolute;
     top: 16px;
     right: 16px;
+    display: none;
   }
   
   .post--author {
-    position: absolute;
-    top: 16px;
-    left: 16px;
+
+  }
+
+  // HOVER EVENTS 
+  &:hover {
+    .post--edit {
+      display: block;
+    }
   }
 }
  
@@ -50,21 +65,15 @@
 }
 
 .post-stat {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: $icon;
-  width:100%;
+  position: relative;
+  clear: both;
+  color: $gray-dark;
+  font-size: 14px;
+  width: 100%;
+  overflow: hidden;
   li {
-    @include span(33.33%);
-    height: 100%;
-    line-height: $icon;
-    text-align: center;
-    background-color: $white;
-    &:nth-child(1),
-    &:nth-child(2) {
-      border-right: 2px solid $gray-dark;
-    }
+    float: left;
+    padding-right: 16px;
   }
 }
 
