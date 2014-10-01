@@ -4,14 +4,15 @@
       <a class="post--edit" href="{{pathFor 'postEdit'}}">Edit</a>
       <!--<div class="cat-icon"></div>-->
       <!--<a href="#" class="upvote {{upvotedClass}}">⬆</a>-->
-      <h2><a href="{{pathFor 'postPage'}}">{{title}}</a></h2>
+      <h2>
+        {{title}}
+      </h2>
+      
+       
+      <h3 class="post--author" >
+        By: {{author}}
+      </h3>
       <p>
-        
-        <a href="{{pathFor 'postPage'}}"></a>
-        
-        <h3 class="post--author" >
-          By: {{author}}
-        </h3>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste repellendus fugit tenetur voluptas numquam natus maxime!
         <!--{{#if ownPost}}-->
           
@@ -23,7 +24,9 @@
         <li>{{pluralize votes "Vote"}}</li>
         <li>{{pluralize commentsCount "comment"}}</li> 
       </ul>
-      <div class="btn">Read more</div>
+      <a href="{{pathFor 'postPage'}}">
+        <div class="btn">Read more</div>
+      </a>
     </div>
   </div>
 </template>
