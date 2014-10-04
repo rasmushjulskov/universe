@@ -13,6 +13,17 @@ Template.upload.helpers({
 
 Template.upload.events({
   'click #uploadSave': function(){
+    var stickerArea = 0;
+    var containerArea = parseInt($("#container").css("width"))*parseInt($("#container").css("height"));
+    $(".box").each(function(){
+      stickerArea += parseInt($(this).css("width"))*parseInt($(this).css("height"));
+    });
+    console.log("containerArea = "+containerArea)
+    console.log("stickerArea = "+stickerArea)
+    var i = stickerArea/containerArea*100;
+    $(".space-used").html(i+"%");    
+
+
     $(".box").each(function(){
 
       var pos = {

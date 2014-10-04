@@ -52,6 +52,7 @@ if (Posts.find().count() === 0) {
 if(Boards.find().count() === 0) {
   Boards.insert({
     title: 'First board ever!',
+    estimatedPrice: 325,
     author: tom.profile.name,
     userId: tom._id,
     url: 'http://google.com/?q=test-'+i,
@@ -61,7 +62,6 @@ if(Boards.find().count() === 0) {
   });
   Stickers.insert({
     title: "element1",
-    estimatedPrice: 325,
     img: "http://ih0.redbubble.net/image.5758410.2568/sticker,375x360.png",
     top: 50,
     left: 50,
