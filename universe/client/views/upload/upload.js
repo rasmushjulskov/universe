@@ -102,6 +102,7 @@ Template.upload.rendered = function(){
       
       newPosX = this.x;
       newPosY = this.y;
+      console.log($(this));
       $(this).find(".posX").html(this.x);
       $(this).find(".posY").html(this.y);
       $(this).attr("data-left", this.x);

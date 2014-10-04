@@ -8,7 +8,11 @@
       <!--<div class="box" id="box2" style="background-color:#555;">Drag and throw me</div>-->
       
       {{#each stickers}}
-        <div class="box" data-id="{{_id}}" data-top="{{top}}" data-left="{{left}}" style="left:{{left}}; top:{{top}}">{{title}}:<span id="posX"></span>,<span id="posY"></span></div>
+        {{#if img}}
+          <img src="{{img}}" alt="{{title}}" class="box" data-id="{{_id}}" data-top="{{top}}" data-left="{{left}}" />
+        {{else}}
+          {{> uploadSticker}}
+        {{/if}} 
       {{/each}}
   </div>
       

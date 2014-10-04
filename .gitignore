@@ -1,5 +1,8 @@
 # Compiled source #
 ###################
+.sass-cache/*
+ssh.md
+ssh.md.pub
 *.com
 *.class
 *.dll

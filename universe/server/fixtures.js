@@ -61,7 +61,9 @@ if(Boards.find().count() === 0) {
   });
   Stickers.insert({
     title: "element1",
+    estimatedPrice: 325,
+    img: "http://ih0.redbubble.net/image.5758410.2568/sticker,375x360.png",
     top: 50,
-    left: 50
+    left: 50,
   });
 }
