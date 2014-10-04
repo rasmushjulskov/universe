@@ -16,7 +16,7 @@ if (Posts.find().count() === 0) {
     title: 'Universe',
     userId: sacha._id,
     author: sacha.profile.name,
-    url: 'http://sachagreif.com/introducing-telescope/',
+    url: 'http://google.com',
     submitted: now - 7 * 3600 * 1000,
     commentsCount: 2,
     upvoters: [], votes: 100
@@ -41,7 +41,7 @@ if (Posts.find().count() === 0) {
       url: 'http://google.com/?q=test-'+i,
       submitted: now - i * 3600 * 1000,
       commentsCount: 0,
-      upvoters: [], votes: 0
+      upvoters: [], votes: 0,
     });
   }
 

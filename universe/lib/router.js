@@ -78,6 +78,9 @@ Router.map(function() {
     },
     data: function() { return Posts.findOne(this.params._id); }
   });
+  this.route('upload', {
+    path: '/upload'
+  });
 });
 
 var requireLogin = function(pause) {

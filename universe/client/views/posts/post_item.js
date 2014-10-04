@@ -28,8 +28,9 @@ Template.postItem.helpers({
     } else {
       var delta = post.position - newPosition;      
       attributes.style = "top: " + delta + "px";
-      if (delta === 0)
+      if (delta === 0){
         attributes.class = "post animate"
+      }
     }
     
     Meteor.setTimeout(function() {
