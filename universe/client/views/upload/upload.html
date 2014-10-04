@@ -8,7 +8,7 @@
       <!--<div class="box" id="box2" style="background-color:#555;">Drag and throw me</div>-->
       
       {{#each stickers}}
-        <div class="box" data-id="{{_id}}" data-top="{{top}}" data-left="{{left}}" style="left:{{left}}; top:{{top}}">{{title}}</div>
+        <div class="box" data-id="{{_id}}" data-top="{{top}}" data-left="{{left}}" style="left:{{left}}; top:{{top}}">{{title}}:<span id="posX"></span>,<span id="posY"></span></div>
       {{/each}}
   </div>
       
@@ -26,7 +26,7 @@
   skewY
   <input type="range" name="skewY" min="0" max="360" step="1" >
   {{#each stickers}}
-    <p>top: {{top}}, newPosX: <span id="posX"></span></p>
-    <p>left: {{left}}, newPosY: <span id="posY"></span></p>
+    <p>top: {{top}} </p>
+    <p>left: {{left}}</p>
   {{/each}}
 </template>

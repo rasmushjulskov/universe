@@ -57,6 +57,12 @@ Template.upload.events({
 
 
 Template.upload.rendered = function(){
+  var overlapThreshold = "0%"; 
+  var droppables = $(".box");
+
+  function onDrop(dragged, dropped) {
+    TweenMax.fromTo(dropped, 0.1, {opacity:1}, {opacity:0, repeat:3, yoyo:true});
+  }
 
   // Animates to the current position
   $(".box").each(function(){
@@ -76,12 +82,38 @@ Template.upload.rendered = function(){
       startX = this.x,
       startY = this.y        
     },
-    onDrag:function() {
+    onDrag:function(e) {
+      var i = droppables.length;
+      while (--i > -1) {
+        if (this.hitTest(droppables[i], overlapThreshold)) {
+          $(droppables[i]).addClass("highlight");
+        } else {
+          $(droppables[i]).removeClass("highlight");
+        }
+       
+       /* ALTERNATE TEST: you can use the static Draggable.hitTest() method for even more flexibility, like passing in a mouse event to see if the mouse is overlapping with the element...
+       if (Draggable.hitTest(droppables[i], e) && droppables[i] !== this.target) {
+         $(droppables[i]).addClass("highlight");
+       } else {
+         $(droppables[i]).removeClass("highlight");
+       }
+       */
+      }
       
       newPosX = this.x;
       newPosY = this.y;
+      $(this).find(".posX").html(this.x);
+      $(this).find(".posY").html(this.y);
       $(this).attr("data-left", this.x);
       $(this).attr("data-top", this.y);
+    },
+    onDragEnd:function(e) {
+      var i = droppables.length;
+      while (--i > -1) {
+        if (this.hitTest(droppables[i], overlapThreshold)) {
+          onDrop(this.target, droppables[i]);
+        }
+      }
     },
     onThrowComplete: function() {
       TweenLite.to("#original", 0.7, {x:this.x, y:this.y, ease:Power2.easeInOut});
