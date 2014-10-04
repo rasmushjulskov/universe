@@ -8,4 +8,5 @@ iron:router
 accounts-ui
 accounts-password
 mrt:iron-router-progress
+meteorhacks:kadira
 
