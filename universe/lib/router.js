@@ -79,7 +79,12 @@ Router.map(function() {
     data: function() { return Posts.findOne(this.params._id); }
   });
   this.route('upload', {
-    path: '/upload'
+    path: '/upload',
+    waitOn: function() {
+      return [
+        Meteor.subscribe('stickers', this.params._id)
+      ];
+    }
   });
 });
 

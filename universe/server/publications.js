@@ -14,3 +14,11 @@ Meteor.publish('comments', function(postId) {
 Meteor.publish('notifications', function() {
   return Notifications.find({userId: this.userId});
 });
+
+Meteor.publish('boards', function(id) {
+  return Boards.find();
+});
+
+Meteor.publish('stickers', function(id) {
+  return Stickers.find();
+});

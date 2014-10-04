@@ -1,5 +1,17 @@
 <template name="upload">
   - Drag and drop
-  <div id="grid" ></div>
+
   <input type="file">
+
+  <p style="width:400px; float:left;">Direction since drag start: <span id="sinceDragStart">-</span></p>
+  <div id="container">
+      <!--<div class="box" id="box2" style="background-color:#555;">Drag and throw me</div>-->
+      
+      {{#each stickers}}
+        <div class="box" id="box1" data-top="{{top}}" data-left="{{left}}" style="left:{{left}}; top:{{top}}">{{title}}</div>
+      {{/each}}
+  </div>
+      
+  
+  <button id="uploadSave">Save</button>
 </template>

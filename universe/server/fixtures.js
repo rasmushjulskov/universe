@@ -48,3 +48,20 @@ if (Posts.find().count() === 0) {
   // Adds developer account 
   Accounts.createUser({ username: "rhl", email: "rhjulskov@gmail.com", password: "123456"});
 }
+
+if(Boards.find().count() === 0) {
+  Boards.insert({
+    title: 'First board ever!',
+    author: tom.profile.name,
+    userId: tom._id,
+    url: 'http://google.com/?q=test-'+i,
+    submitted: now - i * 3600 * 1000,
+    commentsCount: 0,
+    upvoters: [], votes: 0,
+  });
+  Stickers.insert({
+    title: "element1",
+    top: 50,
+    left: 50
+  });
+}
