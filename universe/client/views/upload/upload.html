@@ -8,10 +8,25 @@
       <!--<div class="box" id="box2" style="background-color:#555;">Drag and throw me</div>-->
       
       {{#each stickers}}
-        <div class="box" id="box1" data-top="{{top}}" data-left="{{left}}" style="left:{{left}}; top:{{top}}">{{title}}</div>
+        <div class="box" data-id="{{_id}}" data-top="{{top}}" data-left="{{left}}" style="left:{{left}}; top:{{top}}">{{title}}</div>
       {{/each}}
   </div>
       
   
   <button id="uploadSave">Save</button>
+  <button id="reset">reset</button>
+  <button id="addElement">add</button>
+  <br />
+  scale
+  <input type="range" name="scale" min="0.5" max="1.5" step="0.1" >
+  rotate
+  <input type="range" name="rotate" min="0" max="360" step="1" >
+  skewX
+  <input type="range" name="skewX" min="0" max="360" step="1" >
+  skewY
+  <input type="range" name="skewY" min="0" max="360" step="1" >
+  {{#each stickers}}
+    <p>top: {{top}}, newPosX: <span id="posX"></span></p>
+    <p>left: {{left}}, newPosY: <span id="posY"></span></p>
+  {{/each}}
 </template>
