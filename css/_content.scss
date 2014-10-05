@@ -15,10 +15,14 @@ html {
 body {
   background: $gray-light;
 }
-.main-content-wrapper {
-  margin-left: $sidebar;
-  // should find a smarter method
-  width: calc( 100% - 200px )
 
+.main-content {
+  width: 100%;
+}
 
+.wrapper {
+  width: 100%; 
+  max-width: 920px;
+  margin: 0 auto;
+  
 }

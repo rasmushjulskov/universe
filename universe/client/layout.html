@@ -1,13 +1,15 @@
 <template name="layout">
-  {{> sideNavigation}}
-  <div class="main-content-wrapper">
+  <div class="main-content">
+  <!--  {{> sideNavigation}}-->
   {{> topNavigation}}
-    <div>
-      {{> yield}}
+    <div class="wrapper">    
+      <div>
+        {{> yield}}
+      </div>
+      <br />
+      {{#if currentUser}}
+        <a href="{{pathFor 'postSubmit'}}"> new post </a>
+      {{/if}}
     </div>
-    <br />
-    {{#if currentUser}}
-      <a href="{{pathFor 'postSubmit'}}"> new post </a>
-    {{/if}}
   </div>
 </template>

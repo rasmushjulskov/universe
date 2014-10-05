@@ -76,8 +76,13 @@ Template.upload.rendered = function(){
   }
 
   // Animates to the current position
+  var containerWidth = $("#container").attr("data-width");
   $(".box").each(function(){
-    TweenLite.to($(this), 0.4, {left: $(this).attr("data-left"), top: $(this).attr("data-top")});
+    var width = $(this).attr("data-width");
+    var calculatedWidth = width/containerWidth*100+"%";
+    $(this).css("width", calculatedWidth)
+
+    TweenLite.to($(this), 0, {left: $(this).attr("data-left"), top: $(this).attr("data-top")});
   });
   
 
@@ -86,7 +91,7 @@ Template.upload.rendered = function(){
 
   Draggable.create(".box", {
     bounds: parent,
-    edgeResistance:0.8,
+    edgeResistance:0.9,
     throwProps:true,
     onPress:function() {
       

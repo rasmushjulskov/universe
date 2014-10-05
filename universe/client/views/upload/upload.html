@@ -4,17 +4,17 @@
   <input type="file">
   <h2>price: {{estimatedPrice}}</h2>
   <h1 class="space-used">0%</h1>
-  <p style="width:400px; float:left;">Direction since drag start: <span id="sinceDragStart">-</span></p>
-  <div id="container">
-      <!--<div class="box" id="box2" style="background-color:#555;">Drag and throw me</div>-->
-      
+  <div class="upload-container">
+    <div id="container" data-width="30">
       {{#each stickers}}
         {{#if img}}
-          <img src="{{img}}" alt="{{title}}" class="box" data-id="{{_id}}" data-top="{{top}}" data-left="{{left}}" />
+          <img src="{{img}}" alt="{{title}}" class="box" data-id="{{_id}}" data-top="{{top}}" data-left="{{left}}" data-width="5"/>
         {{else}}
           {{> uploadSticker}}
         {{/if}} 
       {{/each}}
+    </div>
+      
   </div>
       
   

@@ -1,9 +1,10 @@
 <template name="topNavigation">
   <div class="top-navigation">
-    <p>top Navigation</p>
-    {{> loginButtons}}
-     {{#if currentUser}}
-      {{> notifications}}
-    {{/if}}
+    <div class="wrapper">
+      {{> loginButtons}}
+       {{#if currentUser}}
+        {{> notifications}}
+      {{/if}}
+    </div>
   </div>
 </template>
