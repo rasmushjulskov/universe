@@ -11,10 +11,9 @@
 @import "compass/css3/transition";
 @import "compass/typography/lists";
 
-
+@import "variable";
 @import "vendor/normalize.css";
 @import "grids";
-@import "variable";
 @import '../bower_components/sass-mq/mq';
 @import "btn";
 @import "content";
